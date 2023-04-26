@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center">Register</h1>
+      <form th:action="@{/register}" th:object="${employee}" method="post">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" th:field="*{firstName}" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" th:field="*{lastName}" required>
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" th:field="*{username}" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" th:field="*{email}" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" th:field="*{password}" required>
+        </div>
+        <!-- Add the salary form-group here -->
+        <!-- <div class="form-group">
+          <label for="salary">Salary</label>
+          <input type="number" class="form-control" id="salary" th:field="*{salary}" step="0.01" required>
+        </div> -->
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+      <p class="text-center">Already have an account? <a th:href="@{/login}">Login</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

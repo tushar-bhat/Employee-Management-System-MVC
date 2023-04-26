@@ -1,0 +1,2 @@
+Employee added: 31
+Employee deleted with ID: 7
